@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   resources :recipes
   resources :recipe_types
+  resources :cuisines
   
 end

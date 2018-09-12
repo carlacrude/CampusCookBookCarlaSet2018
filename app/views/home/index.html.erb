@@ -13,7 +13,7 @@
         <%= image_tag 'star.png'%>
         <ul>
             <li><%= recipe.recipe_type.name %></li>
-            <li><%= recipe.cuisine %></li>
+            <li><%= recipe.cuisine.name %></li>
             <li><%= recipe.difficulty %></li>
             <li><%= recipe.cook_time %> minutos</li>
         </ul>
@@ -27,7 +27,7 @@
         <h1><%= link_to recipe.title,recipe %></h1>
         <ul>
             <li><%= recipe.recipe_type.name %></li>
-            <li><%= recipe.cuisine %></li>
+            <li><%= recipe.cuisine.name %></li>
             <li><%= recipe.difficulty %></li>
             <li><%= recipe.cook_time %> minutos</li>
         </ul>

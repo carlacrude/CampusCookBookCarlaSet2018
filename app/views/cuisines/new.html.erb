@@ -1,0 +1,8 @@
+<h1>Novo tipo de cozinha</h1>
+
+<%= form_for @cuisines.each do |cuisine| %>
+    <%= f.label :cuisine, 'Cozinha' %>
+    <%= f.text_field :cuisine %>
+
+    <%= f.submit 'Enviar' %>
+<% end %>

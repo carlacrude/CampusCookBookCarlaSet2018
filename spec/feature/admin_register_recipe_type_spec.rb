@@ -7,7 +7,7 @@ feature 'Admin register recipe_type' do
     click_on 'Cadastrar tipo de receita'
     fill_in 'Nome', with: 'Sobremesa'
     click_on 'Enviar'
-    
+
     expect(page).to have_css('h1', text: 'Sobremesa')
   end
 
