@@ -33,7 +33,7 @@ feature 'user mark recipe as feature' do
                                    cuisine: 'Brasileira', difficulty: 'Difícil',
                                    cook_time: 90,
                                    ingredients: 'Feijão e carnes',
-                                   cook_method: 'Misture o feijão com as carnes',
+                                   cook_method: 'Misture o feijão com as carnes', 
                                    featured: false)
     visit root_path
 

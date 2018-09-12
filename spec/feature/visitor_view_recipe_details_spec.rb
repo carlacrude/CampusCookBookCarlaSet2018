@@ -38,7 +38,7 @@ feature 'Visitor view recipe details' do
 
     # simula a ação do usuário
     visit root_path
-    click_on 'Bolo de cenoura'
+    click_on recipe.title
 
     # expectativa da rota atual
     expect(page).to have_css('a.btn.btn-secondary', text: 'Voltar')
@@ -55,7 +55,7 @@ feature 'Visitor view recipe details' do
 
     # simula a ação do usuário
     visit root_path
-    click_on 'Bolo de cenoura'
+    click_on recipe.title
     click_on 'Voltar'
 
     # expectativa da rota atual
