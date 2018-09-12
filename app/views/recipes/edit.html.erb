@@ -1,6 +1,7 @@
 <% if @recipe.errors.any? %>
     <p>Você deve informar todos os dados da receita</p>
 <% end %>
+
 <%= form_for @recipe do |f| %>
     <%= f.label :title, 'Título' %>
     <%= f.text_field :title %>
@@ -22,6 +23,9 @@
 
     <%= f.label :cook_method, 'Como Preparar' %>
     <%= f.text_area :cook_method %>
+
+    <%= f.label :featured, 'Marcar como destaque' %>
+    <%= f.check_box :featured %>
 
     <%= f.submit 'Enviar' %>
 
