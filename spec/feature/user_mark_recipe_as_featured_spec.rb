@@ -11,7 +11,7 @@ feature 'user mark recipe as feature' do
 
     visit root_path
     click_on 'Bolo de cenoura'
-    click_on 'Marcar como destaque'
+    check 'Marcar como destaque'
 
     expect(page).to have_content('Receita marcada como destaque com sucesso!')
     expect(page).to have_css("img[src*='star']")
@@ -35,7 +35,8 @@ feature 'user mark recipe as feature' do
                                    cuisine: cuisine, difficulty: 'Difícil',
                                    cook_time: 90,
                                    ingredients: 'Feijão e carnes',
-                                   cook_method: 'Misture o feijão com as carnes')
+                                   cook_method: 'Misture o feijão com as carnes', 
+                                   featured: false)
     visit root_path
 
     expect(page).to have_css('h3', text: 'Receitas destaque')
