@@ -24,9 +24,13 @@
     <%= f.label :cook_method, 'Como Preparar' %>
     <%= f.text_area :cook_method %>
 
+    <%= f.file_field :recipe_image %>
+
     <%= f.label :featured, 'Marcar como destaque' %>
     <%= f.check_box :featured %>
 
     <%= f.submit 'Enviar' %>
 
 <% end %>
+
+<%= link_to 'Voltar', root_path, class: 'btn btn-secondary' %>

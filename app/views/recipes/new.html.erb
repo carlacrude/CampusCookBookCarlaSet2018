@@ -25,8 +25,9 @@
     <%= f.text_area :cook_method %>
 
     <%= f.file_field :recipe_image %>
-    <%= f.submit %>
 
     <%= f.submit 'Enviar uma receita' %>
 
 <% end %>
+
+<%= link_to 'Voltar', root_path, class: 'btn btn-secondary' %>
