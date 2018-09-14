@@ -1,37 +1,67 @@
-<h1>CookBook</h1>
-<p>Bem-vindo ao maior livro de receitas online</p>
+<%= render "shared/header" %>
 
-<%= link_to 'Home', root_path, class:'nav-link' %>
-<%= link_to 'Enviar uma receita', new_recipe_path, class:'nav-link' %>
-<%= link_to 'Cadastrar tipo de receita', new_recipe_type_path %>
-<%= link_to 'Cadastrar cozinha', new_cuisine_path %>
 
-<h3>Receitas destaque</h3>
-
-<div id="recipes-featured">
-    <% @recipes_featured.each do |recipe| %>
-        <h1><%= link_to recipe.title,recipe %></h1>
-        <%= image_tag 'star.png'%>
-        <ul>
-            <li><%= recipe.recipe_type.name %></li>
-            <li><%= recipe.cuisine.name %></li>
-            <li><%= recipe.difficulty %></li>
-            <li><%= recipe.cook_time %> minutos</li>
-        </ul>
-    <% end %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">CookBook</h1>
+    <p class="lead">Bem-vindo ao maior livro de receitas online.</p>
+  </div>
 </div>
 
-<h3>Outras receitas</h3>
+<div class="card-group">
+    <div class="card">
+        <div class="col-sm-6">
+            <h3>Receitas destaque</h3>
+        
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div id="recipes-featured">
+                    <% @recipes_featured.each do |recipe| %>
+                    
+                        <div class="card-img-top", alt="Card image cap">
+                            <%= image_tag recipe.recipe_image.url%>
+                        </div>
 
-<div id="other-recipes">
-    <% @recipes.each do |recipe| %>
-        <h1><%= link_to recipe.title,recipe %></h1>
-        <ul>
-            <li><%= recipe.recipe_type.name %></li>
-            <li><%= recipe.cuisine.name %></li>
-            <li><%= recipe.difficulty %></li>
-            <li><%= recipe.cook_time %> minutos</li>
-        </ul>
-    <% end %>
+                        <div class="card-body">
+                            <h4><%= link_to recipe.title,recipe, class: "card-title" %></h4> 
+                            <p class="card-text"><%= image_tag 'star.png'%></p>
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= recipe.recipe_type.name %></li>
+                            <li class="list-group-item"><%= recipe.cuisine.name %></li>
+                            <li class="list-group-item"><%= recipe.difficulty %></li>
+                            <li class="list-group-item"><%= recipe.cook_time %> minutos</li>     
+                        </ul>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="col-sm-6">
+            <h3>Outras receitas</h3>
+
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div id="other-recipes">
+                    <% @recipes.each do |recipe| %>
+                        <div class="card-img-top", alt="Card image cap">
+                            <%= image_tag recipe.recipe_image.url%>
+                        </div>
+
+                        <div class="card-body">
+                            <h4><%= link_to recipe.title,recipe, class: "card-title" %></h4> 
+                        </div>
+
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= recipe.recipe_type.name %></li>
+                            <li class="list-group-item"><%= recipe.cuisine.name %></li>
+                            <li class="list-group-item"><%= recipe.difficulty %></li>
+                            <li class="list-group-item"><%= recipe.cook_time %> minutos</li>     
+                        </ul>
+                    <% end %>
+                </div>
+            </div>
+        </div>
 </div>
 
