@@ -7,11 +7,14 @@ feature 'user mark recipe as feature' do
     Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
-                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes', 
+                  featured: true)
 
     visit root_path
     click_on 'Bolo de cenoura'
+    click_on 'Editar'
     check 'Marcar como destaque'
+    click_on 'Enviar'
 
     expect(page).to have_content('Receita marcada como destaque com sucesso!')
     expect(page).to have_css("img[src*='star']")

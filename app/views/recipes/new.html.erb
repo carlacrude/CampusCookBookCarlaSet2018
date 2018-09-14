@@ -2,7 +2,7 @@
     <p>Você deve informar todos os dados da receita</p>
 <% end %>
 
-<%= form_for @recipe do |f| %>
+<%= form_for @recipe, url: @recipes, html: { multipart: true } do |f| %>
     <%= f.label :title, 'Título' %>
     <%= f.text_field :title %>
 
@@ -23,6 +23,9 @@
 
     <%= f.label :cook_method, 'Como Preparar' %>
     <%= f.text_area :cook_method %>
+
+    <%= f.file_field :recipe_image %>
+    <%= f.submit %>
 
     <%= f.submit 'Enviar uma receita' %>
 

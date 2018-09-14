@@ -1,4 +1,4 @@
-<%if @recipe.featured? %>
+<% if @recipe.featured? %>
     <p>Receita marcada como destaque com sucesso!</p>
 <% end %>
 
@@ -11,18 +11,16 @@
 <p><%= @recipe.cook_time %> minutos</p>
 <p><%= @recipe.featured %></p>
 
+<% if @recipe.featured? %>
+    <%= image_tag "star.png" %>
+<% end %>
+
 <h3> Ingredientes </h3>
 <p><%= @recipe.ingredients %></p>
 
 <h3> Como Preparar </h3>
 <p><%= @recipe.cook_method %></p>
-
-<%= form_for @recipe do |f| %>
-    <%= f.label :featured, 'Marcar como destaque' %>
-    <%= f.check_box :featured %>
-<% end %>
-
-<%= image_tag 'star.png'%>
+<%= image_tag @recipe.recipe_image.url%>
 
 <%= link_to 'Editar', edit_recipe_path(@recipe.id), class: 'btn btn-primary' %>
 <%= link_to 'Voltar', root_path, class: 'btn btn-secondary' %>
