@@ -1,23 +1,18 @@
-
-
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="<%= root_path %>" role="tab" aria-controls="pills-home" aria-selected="true">Home</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-cadastro-tab" data-toggle="pill" href="<%= new_recipe_path %>" role="tab" aria-controls="pills-cadastro" aria-selected="false">Cadastrar receita</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-tipo-tab" data-toggle="pill" href="<%= new_recipe_type_path %>" role="tab" aria-controls="pills-tipo" aria-selected="false">Cadastrar tipo de receita</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="pills-cozinha-tab" data-toggle="pill" href="<%= new_cuisine_path %>" role="tab" aria-controls="pills-cozinha" aria-selected="false">Cadastrar cozinha</a>
-  </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"></div>
-  <div class="tab-pane fade" id="pills-cadastro" role="tabpanel" aria-labelledby="pills-cadastro-tab"></div>
-  <div class="tab-pane fade" id="pills-tipo" role="tabpanel" aria-labelledby="pills-tipo-tab"></div>
-  <div class="tab-pane fade" id="pills-cozinha" role="tabpanel" aria-labelledby="pills-cozinha-tab"></div>
-</div>
-
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link <%= 'active' if(params[:controller] == 'home' && params[:action] == 'index') %> id="pills-home-tab" data-toggle="pill" href="<%= root_path %>" role="tab">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= 'active' if(params[:controller] == 'recipes' && params[:action] == 'new') %> id="pills-cadastro-tab" data-toggle="pill" href="<%= new_recipe_path %>" role="tab">Cadastrar receita</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= 'active' if(params[:controller] == 'recipe_types' && params[:action] == 'new') %> id="pills-tipo-tab" data-toggle="pill" href="<%= new_recipe_type_path %>" role="tab">Cadastrar tipo de receita</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%= 'active' if (params[:controller] == 'cuisines' && params[:action] == 'new') %> id="pills-cozinha-tab" data-toggle="pill" href="<%= new_cuisine_path %>" role="tab">Cadastrar cozinha</a>
+      </li>
+    </ul>
+  </div>
+</nav>
