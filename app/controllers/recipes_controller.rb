@@ -39,4 +39,11 @@ class RecipesController < ApplicationController
             render 'edit'
         end
     end
+
+    def destroy
+        @recipe = Recipe.find(params[:id])
+        @recipe.destroy
+        flash[:notice] = "Sua receita foi excluída com sucesso"
+        redirect_to root_url
+    end
 end
