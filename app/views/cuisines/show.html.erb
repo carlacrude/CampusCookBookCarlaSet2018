@@ -1,3 +1,11 @@
-<h1><%= @cuisine.name %></h1>
 
-<%= link_to 'Voltar', root_path, class: 'btn btn-secondary' %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 class="mt-4 mb-4"><%= @cuisine.name %></h3>
+      <div class="form-group">
+        <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

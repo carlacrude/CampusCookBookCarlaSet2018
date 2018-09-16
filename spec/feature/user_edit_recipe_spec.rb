@@ -7,7 +7,8 @@ feature 'User update recipe' do
     Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
-                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes', 
+                  recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
 
     visit root_path
     click_on 'Bolo de cenoura'
@@ -23,7 +24,8 @@ feature 'User update recipe' do
     Recipe.create(title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
-                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes', 
+                  recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
 
     # simula a ação do usuário
     visit root_path
@@ -56,7 +58,8 @@ feature 'User update recipe' do
     Recipe.create(title: 'Bolodecenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
-                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes', 
+                  recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
 
     # simula a ação do usuário
     visit root_path

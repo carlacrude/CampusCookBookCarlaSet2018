@@ -41,7 +41,7 @@ feature 'User attach photo to recipe' do
 
     click_on 'Enviar'
 
-    expect(page).to have_xpath("//img[contains(@src,'missing.png')]")
+    expect(page).to have_content('Você deve informar todos os dados da receita')
   end
 
 

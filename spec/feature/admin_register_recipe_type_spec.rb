@@ -8,7 +8,7 @@ feature 'Admin register recipe_type' do
     fill_in 'Nome', with: 'Sobremesa'
     click_on 'Enviar'
 
-    expect(page).to have_css('h1', text: 'Sobremesa')
+    expect(page).to have_css('h3', text: 'Sobremesa')
   end
 
   scenario 'and must fill in name' do

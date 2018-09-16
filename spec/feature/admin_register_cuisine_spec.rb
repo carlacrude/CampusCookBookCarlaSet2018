@@ -8,7 +8,7 @@ feature 'Admin register cuisine' do
     fill_in 'Nome', with: 'Arabe'
     click_on 'Enviar'
 
-    expect(page).to have_css('h1', text: 'Arabe')
+    expect(page).to have_css('h3', text: 'Arabe')
   end
 
   scenario 'and must fill in name' do

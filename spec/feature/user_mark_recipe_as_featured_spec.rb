@@ -7,7 +7,8 @@ feature 'user mark recipe as feature' do
     Recipe.create(title: 'Bolo de cenoura', difficulty: 'Médio',
                   recipe_type: recipe_type, cuisine: cuisine,
                   cook_time: 50, ingredients: 'Farinha, açucar, cenoura',
-                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes')
+                  cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes', 
+                  recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
 
     visit root_path
     click_on 'Bolo de cenoura'
@@ -30,6 +31,7 @@ feature 'user mark recipe as feature' do
                                     cook_time: 50,
                                     ingredients: 'Farinha, açucar, cenoura',
                                     cook_method: 'Cozinhe a cenoura, corte em pedaços pequenos, misture com o restante dos ingredientes',
+                                    recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')),
                                     featured: true)
 
     another_recipe = Recipe.create(title: 'Feijoada',
@@ -37,7 +39,8 @@ feature 'user mark recipe as feature' do
                                    cuisine: cuisine, difficulty: 'Difícil',
                                    cook_time: 90,
                                    ingredients: 'Feijão e carnes',
-                                   cook_method: 'Misture o feijão com as carnes')
+                                   cook_method: 'Misture o feijão com as carnes', 
+                                   recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
     visit root_path
 
     expect(page).to have_css('h3', text: 'Receitas destaque')

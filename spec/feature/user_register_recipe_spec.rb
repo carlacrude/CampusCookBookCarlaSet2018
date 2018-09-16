@@ -25,6 +25,7 @@ feature 'User register recipe' do
     fill_in 'Tempo de Preparo', with: '45'
     fill_in 'Ingredientes', with: 'Trigo para quibe, cebola, tomate picado, azeite, salsinha'
     fill_in 'Como Preparar', with: 'Misturar tudo e servir. Adicione limão a gosto.'
+    attach_file('Foto da Receita', Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg'))
     click_on 'Enviar'
 
 
