@@ -1,26 +1,15 @@
 require 'rails_helper'
 
-feature 'User register recipe' do
-  scenario 'view send link' do
-    visit root_path
-
-    expect(page).to have_link('Home', href: root_path, class: 'nav-link')
-    expect(page).to have_link('Enviar uma receita', href: new_recipe_path,
-                                                    class: 'nav-link')
-  end
-
+feature 'Visitor register recipe' do
   scenario 'successfully' do
     #cria os dados necessários, nesse caso não vamos criar dados no banco
-    RecipeType.create(name: 'Sobremesa')
-    RecipeType.create(name: 'Entrada')
     Cuisine.create(name: 'Arabe')
-
     # simula a ação do usuário
     visit root_path
     click_on 'Enviar uma receita'
 
     fill_in 'Título', with: 'Tabule'
-    select 'Entrada', from: 'Tipo da Receita'
+    fill_in 'Tipo da Receita', with: 'Entrada'
     select 'Arabe', from: 'Cozinha'
     fill_in 'Dificuldade', with: 'Fácil'
     fill_in 'Tempo de Preparo', with: '45'
@@ -29,7 +18,6 @@ feature 'User register recipe' do
     click_on 'Enviar'
 
 
-    # expectativas
     expect(page).to have_css('h1', text: 'Tabule')
     expect(page).to have_css('h3', text: 'Detalhes')
     expect(page).to have_css('p', text: 'Entrada')
@@ -40,21 +28,5 @@ feature 'User register recipe' do
     expect(page).to have_css('p', text: 'Trigo para quibe, cebola, tomate picado, azeite, salsinha')
     expect(page).to have_css('h3', text: 'Como Preparar')
     expect(page).to have_css('p', text:  'Misturar tudo e servir. Adicione limão a gosto.')
-  end
-
-  scenario 'and must fill in all fields' do
-    # simula a ação do usuário
-    visit root_path
-    click_on 'Enviar uma receita'
-
-    fill_in 'Título', with: ''
-    fill_in 'Dificuldade', with: ''
-    fill_in 'Tempo de Preparo', with: ''
-    fill_in 'Ingredientes', with: ''
-    fill_in 'Como Preparar', with: ''
-    click_on 'Enviar'
-
-
-    expect(page).to have_content('Você deve informar todos os dados da receita')
   end
 end

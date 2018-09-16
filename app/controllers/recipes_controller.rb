@@ -14,8 +14,12 @@ class RecipesController < ApplicationController
             flash[:success]='Sua receita foi cadastrada com sucesso'
         else
             flash[:notice]='Você deve informar todos os dados da receita'
+            unless @recipe.errors.messages[:recipe_image_content_type].empty? 
+                flash[:notice] = "Tipo da imagem não é válido"
+            end
             render 'new'
         end
+
     end
 
     def edit
@@ -31,6 +35,7 @@ class RecipesController < ApplicationController
             end
             redirect_to recipe_path(@recipe.id)
         else
+            flash[:notice]='Você deve informar todos os dados da receita'
             render 'edit'
         end
     end

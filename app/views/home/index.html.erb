@@ -7,19 +7,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="recipes-featured">
       <h3 class="mb-4">Receitas destaque</h3>
       <ul class="list-unstyled">
         <% @recipes_featured.each do |recipe| %>
           <li class="media mb-4">
-            <img class="mr-3" src="<%= recipe.recipe_image.url%>">
+            <img class="mr-3" src="<%= recipe.recipe_image.url(:thumb)%>">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><%= link_to recipe.title, recipe %></h5>
               <ul class="list-unstyled">
                 <li><strong>Tipo:</strong> <%= recipe.recipe_type.name %></li>
                 <li><strong>Cozinha:</strong> <%= recipe.cuisine.name %></li>
                 <li><strong>Dificuldade:</strong> <%= recipe.difficulty %></li>
-                <li><%= image_tag 'star.png'%></li>
+                <li><%= image_tag'star.png'%></li>
               </ul>
             </div>
           </li>
@@ -27,12 +27,12 @@
       </ul>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="other-recipes">
       <h3 class="mb-4">Outras receitas</h3>
       <ul class="list-unstyled">
         <% @recipes.each do |recipe| %>
           <li class="media mb-4">
-            <img class="mr-3" src="<%= recipe.recipe_image.url%>">
+            <img class="mr-3" src="<%= recipe.recipe_image.url(:thumb)%>">
             <div class="media-body">
               <h5 class="mt-0 mb-1"><%= link_to recipe.title, recipe %></h5>
               <ul class="list-unstyled">
