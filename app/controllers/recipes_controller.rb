@@ -48,6 +48,7 @@ class RecipesController < ApplicationController
     end
 
     def search
-        @recipes = Recipe.where(title: params[:keyword])
+        @recipes = Recipe.where("title LIKE '%#{params[:keyword]}%'")
+        # @recipes = Recipe.where("title = ?", params[:keyword])
     end
 end

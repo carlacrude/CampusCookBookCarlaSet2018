@@ -1,7 +1,33 @@
+
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">CookBook</h1>
-    <p class="lead">Bem-vindo ao maior livro de receitas online.</p>
+  <div class='container'>
+    <div class="row">
+      
+      <div class="col-sm-8">
+        <h1 class="display-4">CookBook</h1>
+        <p class="lead">Bem-vindo ao maior livro de receitas online.</p>
+      </div>
+
+      
+      <div class="col-sm-2">
+        <h4>Tipo</h4>
+        <% @recipetypes.each do |recipetype| %>
+          <ul class="list-unstyled mt-2 mb-2">
+            <li><%= link_to recipetype.name %></li>
+          </ul>
+        <% end %>
+        </div>
+
+        <div class="col-sm-2">
+          <h4>Cozinha</h4>
+          <% @cuisines.each do |cuisine| %>
+            <ul class="list-unstyled mt-2 mb-2">
+              <li><%= link_to cuisine.name %></li>
+            </ul>
+          <% end %>
+        </div>
+
+    </div> 
   </div>
 </div>
 
