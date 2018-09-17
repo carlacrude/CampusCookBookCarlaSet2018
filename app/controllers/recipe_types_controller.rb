@@ -17,4 +17,6 @@ class RecipeTypesController < ApplicationController
         @recipe_type = RecipeType.find(params[:id])
     end
 
+    def destroy
+    end
 end

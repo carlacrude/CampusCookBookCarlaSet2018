@@ -35,12 +35,13 @@ feature 'user mark recipe as feature' do
                                     featured: true)
 
     another_recipe = Recipe.create(title: 'Feijoada',
-                                   recipe_type: principal_recipe_type,
-                                   cuisine: cuisine, difficulty: 'Difícil',
-                                   cook_time: 90,
-                                   ingredients: 'Feijão e carnes',
-                                   cook_method: 'Misture o feijão com as carnes', 
-                                   recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')))
+                                    recipe_type: principal_recipe_type,
+                                    cuisine: cuisine, difficulty: 'Difícil',
+                                    cook_time: 90,
+                                    ingredients: 'Feijão e carnes',
+                                    cook_method: 'Misture o feijão com as carnes', 
+                                    recipe_image: File.new(Rails.root.join('spec', 'support', 'fixtures', 'Feijoada.jpg')),
+                                    featured: false)
     visit root_path
 
     expect(page).to have_css('h3', text: 'Receitas destaque')

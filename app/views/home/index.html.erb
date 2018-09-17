@@ -13,7 +13,7 @@
         <h4>Tipo</h4>
         <% @recipetypes.each do |recipetype| %>
           <ul class="list-unstyled mt-2 mb-2">
-            <li><%= link_to recipetype.name %></li>
+            <li><%= link_to recipetype.name, recipetype %></li>
           </ul>
         <% end %>
         </div>
@@ -22,7 +22,7 @@
           <h4>Cozinha</h4>
           <% @cuisines.each do |cuisine| %>
             <ul class="list-unstyled mt-2 mb-2">
-              <li><%= link_to cuisine.name %></li>
+              <li><%= link_to cuisine.name, cuisine %></li>
             </ul>
           <% end %>
         </div>

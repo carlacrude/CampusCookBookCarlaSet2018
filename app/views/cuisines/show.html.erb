@@ -1,8 +1,38 @@
-
 <div class="container">
   <div class="row">
     <div class="col-sm-6">
       <h3 class="mt-4 mb-4"><%= @cuisine.name %></h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <ul class="list-unstyled">
+        <% @cuisine.recipes.each do |recipe| %>
+          <li class="media mb-4">
+            <img class="mr-3" src="<%= recipe.recipe_image.url(:thumb)%>">
+            <div class="media-body">
+              <h5 class="mt-0 mb-1"><%= link_to recipe.title, recipe %></h5>
+              <ul class="list-unstyled">
+                <li><strong>Tipo:</strong> <%= recipe.recipe_type.name %></li>
+                <li><strong>Cozinha:</strong> <%= recipe.cuisine.name %></li>
+                <li><strong>Dificuldade:</strong> <%= recipe.difficulty %></li>
+                <li><strong>Tempo de Preparo:</strong> <%= recipe.cook_time %> minutos </li>
+              </ul>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
       <div class="form-group">
         <%= link_to 'Voltar', root_path, class: 'btn btn-primary' %>
       </div>

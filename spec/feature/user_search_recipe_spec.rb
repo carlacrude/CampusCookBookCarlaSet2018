@@ -41,12 +41,8 @@ feature 'user search recipe' do
 
     visit root_path
     
-    expect(page).to have_css('h3', text: 'Tipo')
-    expect(page).to have_css('li', text: recipe.recipe_type_prato_principal)
-    expect(page).to have_css('li', text: recipe.recipe_type_sobremesa)
-  end
-
-  scenario '' do
-  
+    expect(page).to have_css('h4', text: 'Tipo')
+    expect(page).to have_css('li', text: recipe_type_prato_principal.name)
+    expect(page).to have_css('li', text: recipe_type_sobremesa.name)
   end
 end
