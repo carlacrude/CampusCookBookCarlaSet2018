@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="nav navbar-nav mr-auto">
@@ -15,4 +16,11 @@
       </li>
     </ul>
   </div>
+
+  <%= form_tag("/search", method: "get", class: "form-inline") do %>
+    <%= text_field_tag(:keyword, nil, class: "form-control mr-sm-2", type: "search", placeholder: "Buscar") %>
+    <%= submit_tag("Buscar", class: "btn btn-outline-success my-2 my-sm-0") %>
+  <% end %>
 </nav>
+
+

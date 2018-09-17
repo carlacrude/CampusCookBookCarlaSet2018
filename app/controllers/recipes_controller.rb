@@ -46,4 +46,8 @@ class RecipesController < ApplicationController
         flash[:notice] = "Sua receita foi excluída com sucesso"
         redirect_to root_url
     end
+
+    def search
+        @recipes = Recipe.where(title: params[:keyword])
+    end
 end
