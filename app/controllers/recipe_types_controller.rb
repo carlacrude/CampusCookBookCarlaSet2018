@@ -18,5 +18,9 @@ class RecipeTypesController < ApplicationController
     end
 
     def destroy
+        @recipe_type = RecipeType.find(params[:name])
+        @recipe_type.destroy
+        flash[:notice] = "O tipo de receita foi excluído com sucesso"
+        redirect_to root_url
     end
 end
